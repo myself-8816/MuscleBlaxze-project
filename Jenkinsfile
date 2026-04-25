@@ -54,14 +54,14 @@ stage('Download WAR') {
         stage('Build Docker Image') {
             steps {
                  sh """
-docker build --no-cache --build-arg WAR_FILE=healthy-hens-1.0.${BUILD_NUMBER}.war -t varsha0411/srik:latest .
+docker build --no-cache --build-arg WAR_FILE=healthy-hens-1.0.${BUILD_NUMBER}.war -t kishorekorla1993/krish:latest .
 """
             }
         }
 		stage('Login to Docker Hub') {
             steps {
                 withCredentials([usernamePassword(
-                    credentialsId: 'docker-creds',
+                    credentialsId: 'docker-krish',
                     usernameVariable: 'DOCKER_USER',
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
