@@ -54,7 +54,7 @@ stage('Download WAR') {
         stage('Build Docker Image') {
             steps {
                  sh """
-docker build --no-cache --build-arg WAR_FILE=healthy-hens-1.0.${BUILD_NUMBER}.war -t kishorekorla1993/krish:latest .
+docker build --no-cache --build-arg WAR_FILE=gym-outlet-1.0.${BUILD_NUMBER}.war -t kishorekorla1993/krish:latest .
 """
             }
         }
