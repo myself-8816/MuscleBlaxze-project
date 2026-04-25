@@ -38,7 +38,7 @@ pipeline {
 stage('Download WAR') {
   steps {
     withCredentials([usernamePassword(
-        credentialsId: 'nexus-creds',
+        credentialsId: 'nexus-krish',
         usernameVariable: 'NEXUS_USER',
         passwordVariable: 'NEXUS_PASS'
     )]) {
