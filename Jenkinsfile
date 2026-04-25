@@ -72,7 +72,7 @@ docker build --no-cache --build-arg WAR_FILE=healthy-hens-1.0.${BUILD_NUMBER}.wa
 
         stage('Push Docker Image') {
             steps {
-                sh 'docker push varsha0411/srik:latest'
+                sh 'docker push kishorekorla1993/krish:latest'
             }
         }
 		        stage('K8s Deployment') {
