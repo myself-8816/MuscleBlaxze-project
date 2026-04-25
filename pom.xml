@@ -3,7 +3,7 @@
 
     <groupId>com.gym</groupId>
     <artifactId>gym-outlet-advanced</artifactId>
-    <version>1.0</version>
+    <version>1.0.${BUILD_NUMBER}</version>
     <packaging>war</packaging>
 
     <dependencies>
@@ -13,6 +13,7 @@
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
+        
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>javax.servlet.jsp-api</artifactId>
@@ -20,6 +21,19 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+     <distributionManagement>
+    <repository>
+        <id>maven-releases</id>
+        <name>maven-releases</name>
+        <url>http://3.110.197.171:8081/repository/maven-releases/</url>
+    </repository>
+
+    <snapshotRepository>
+        <id>maven-snapshots</id>
+        <name>maven-snapshots</name>
+        <url>http://3.110.197.171:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+</distributionManagement>
 
     <build>
         <finalName>gym-outlet</finalName>
