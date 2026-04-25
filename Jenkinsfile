@@ -44,7 +44,7 @@ stage('Download WAR') {
     )]) {
        sh '''
         wget --user=$NEXUS_USER --password=$NEXUS_PASS \
-        http://3.110.197.171:8081/repository/maven-releases/com/gym/gym-outlet-advanced/1.0.${BUILD_NUMBER}/gym-outlet-1.0.${BUILD_NUMBER}.war
+http://3.110.197.171:8081/repository/maven-releases/com/gym/gym-outlet-advanced/1.0.${BUILD_NUMBER}/gym-outlet-advanced-1.0.${BUILD_NUMBER}.war
         '''
 		
     }
@@ -54,7 +54,7 @@ stage('Download WAR') {
         stage('Build Docker Image') {
             steps {
                  sh """
-docker build --no-cache --build-arg WAR_FILE=gym-outlet-1.0.${BUILD_NUMBER}.war -t kishorekorla1993/krish:latest .
+docker build --no-cache --build-arg WAR_FILE=gym-outlet-advanced-1.0.${BUILD_NUMBER}.war -t kishorekorla1993/krish:latest .
 """
             }
         }
