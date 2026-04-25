@@ -44,7 +44,7 @@ stage('Download WAR') {
     )]) {
        sh '''
         wget --user=$NEXUS_USER --password=$NEXUS_PASS \
-        http://34.227.197.244:8081/repository/maven-releases/com/poultry/healthy-hens/1.0.${BUILD_NUMBER}/healthy-hens-1.0.${BUILD_NUMBER}.war
+        http://34.227.197.244:8081/repository/maven-releases/com/gym/gym-outlet-advanced/1.0.${BUILD_NUMBER}/gym-outlet-1.0.${BUILD_NUMBER}.war
         '''
 		
     }
