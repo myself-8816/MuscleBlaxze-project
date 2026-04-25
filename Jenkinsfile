@@ -20,7 +20,7 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('sonatype/nexus3') {
+                withSonarQubeEnv('sonatype') {
                     sh 'mvn sonar:sonar'
                 }
             }
