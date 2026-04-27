@@ -77,7 +77,7 @@ docker build --no-cache --build-arg WAR_FILE=gym-outlet-advanced-1.0.${BUILD_NUM
         }
 		        stage('K8s Deployment') {
     steps {
-        withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
+        withCredentials([file(credentialsId: 'kubeconfigfile', variable: 'KUBECONFIG')]) {
             sh """
             export KUBECONFIG=$KUBECONFIG
             kubectl get nodes
