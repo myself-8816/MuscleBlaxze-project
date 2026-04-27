@@ -30,7 +30,7 @@
 <body>
 
 <div class="container">
-    <h1 class="mb-4">Welcome to Kishore Gym</h1>
+    <h1 class="mb-4">Welcome to KP Gym</h1>
     <p class="mb-4">Your one-stop shop for fitness equipment</p>
 
     <a href="products" class="btn btn-custom">View Products</a>
