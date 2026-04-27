@@ -44,7 +44,7 @@ stage('Download WAR') {
     )]) {
        sh '''
         wget --user=$NEXUS_USER --password=$NEXUS_PASS \
-http://3.110.197.171:8081/repository/maven-releases/com/gym/gym-outlet-advanced/1.0.${BUILD_NUMBER}/gym-outlet-advanced-1.0.${BUILD_NUMBER}.war
+http://54.198.236.12:8081/repository/maven-releases/com/gym/gym-outlet-advanced/1.0.${BUILD_NUMBER}/gym-outlet-advanced-1.0.${BUILD_NUMBER}.war
         '''
 		
     }
@@ -54,7 +54,7 @@ http://3.110.197.171:8081/repository/maven-releases/com/gym/gym-outlet-advanced/
         stage('Build Docker Image') {
             steps {
                  sh """
-docker build --no-cache --build-arg WAR_FILE=gym-outlet-advanced-1.0.${BUILD_NUMBER}.war -t kishorekorla1993/krish:latest .
+docker build --no-cache --build-arg WAR_FILE=gym-outlet-advanced-1.0.${BUILD_NUMBER}.war -t pavansai33/klaus:latest .
 """
             }
         }
@@ -72,7 +72,7 @@ docker build --no-cache --build-arg WAR_FILE=gym-outlet-advanced-1.0.${BUILD_NUM
 
         stage('Push Docker Image') {
             steps {
-                sh 'docker push kishorekorla1993/krish:latest'
+                sh 'docker push pavansai33/klaus:latest'
             }
         }
 		        stage('K8s Deployment') {
