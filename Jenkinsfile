@@ -38,7 +38,7 @@ pipeline {
 stage('Download WAR') {
   steps {
     withCredentials([usernamePassword(
-        credentialsId: 'nexus-krish',
+        credentialsId: 'nexus-creds',
         usernameVariable: 'NEXUS_USER',
         passwordVariable: 'NEXUS_PASS'
     )]) {
@@ -61,7 +61,7 @@ docker build --no-cache --build-arg WAR_FILE=gym-outlet-advanced-1.0.${BUILD_NUM
 		stage('Login to Docker Hub') {
             steps {
                 withCredentials([usernamePassword(
-                    credentialsId: 'docker-krish',
+                    credentialsId: 'docker-creds',
                     usernameVariable: 'DOCKER_USER',
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
