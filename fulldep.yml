@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: myapp-container
-        image: kishorekorla1993/krish:latest
+        image: pavansai33/klaus:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
