@@ -44,7 +44,7 @@ stage('Download WAR') {
     )]) {
        sh '''
         wget --user=$NEXUS_USER --password=$NEXUS_PASS \
-http://54.198.236.12:8081/repository/maven-releases/com/gym/gym-outlet-advanced/1.0.${BUILD_NUMBER}/gym-outlet-advanced-1.0.${BUILD_NUMBER}.war
+http://98.94.99.170:8081/repository/maven-releases/com/gym/gym-outlet-advanced/1.0.${BUILD_NUMBER}/gym-outlet-advanced-1.0.${BUILD_NUMBER}.war
         '''
 		
     }
