@@ -1,28 +1,26 @@
-package com.gym.model;
+package com.gym.dao;
 
-public class Membership {
+import java.util.*;
+import com.gym.model.Product;
+import com.gym.model.Membership;
 
-    private String name;
-    private String mobileNumber;
+public class ProductDAO {
 
-    public Membership(String name, String mobileNumber) {
-        this.name = name;
-        this.mobileNumber = mobileNumber;
+    public static List<Product> getProducts() {
+        List<Product> list = new ArrayList<>();
+        list.add(new Product(1, "Dumbbells", 50));
+        list.add(new Product(2, "Treadmill", 500));
+        list.add(new Product(3, "Bench Press", 300));
+        return list;
     }
 
-    public String getName() {
-        return name;
+    private static List<Membership> membershipList = new ArrayList<>();
+
+    public static void addMembership(String name, String mobileNumber) {
+        membershipList.add(new Membership(name, mobileNumber));
     }
 
-    public String getMobileNumber() {
-        return mobileNumber;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setMobileNumber(String mobileNumber) {
-        this.mobileNumber = mobileNumber;
+    public static List<Membership> getMemberships() {
+        return membershipList;
     }
 }
